@@ -8,7 +8,7 @@ import scrapy
 
 class AmericanasItem(scrapy.Item):
     # define the fields for your item here like:
-    title = scrapy.Field()
+    titulo = scrapy.Field()
     ean = scrapy.Field()
     url = scrapy.Field()
     descricao = scrapy.Field()
