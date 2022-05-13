@@ -19,12 +19,12 @@ class ProductSpider(scrapy.Spider):
 
         self.load_links()
 
-        urls = self.df_links["links"][1000:].to_list()
+        urls = self.df_links["links"][500:].to_list()
         #urls = ["https://www.americanas.com.br/produto/4875373969"]
         
         print(urls)
 
-        return [scrapy.Request(client.scrapyGet(url = url), callback = self.parse) for url in urls]
+        return [scrapy.Request(client.scrapyGet(url = url), callback = self.parse,  meta={'url': url}) for url in urls]
         #return [scrapy.Request(url = url, callback = self.parse, meta = {'dont_merge_cookies': True}) for url in urls]
 
 
@@ -32,22 +32,24 @@ class ProductSpider(scrapy.Spider):
         
         items = AmericanasItem()
        
+        url_meta = response.meta.get('url')
         url = response.url
         titulo = response.xpath('//*[@id="rsyswpsdk"]/div/main/div[3]/div[1]/div/div[2]/h1/text()').extract()
         ean = re.findall(r'digo de barras</td><td class="spec-drawer__Text-sc-jcvy3q-5 fMwSYd">([0-9]+)|$', str(response.body))
         descricao = response.xpath('//*[@id="info-section"]/div[2]/div/div/div/div').xpath('normalize-space()').getall()
       
         '''print("###########################################################################")
-        print("URL is: {}".format(url))
-        print("Title is: {}".format(titulo))
-        print("EAN is: {}".format(ean))
-        print("Descricao is: {}".format(descricao))
+        print("URL: {}".format(url))
+        print("Meta URL: {}".format(url_meta))
+        print("Titulo: {}".format(titulo))
+        print("EAN: {}".format(ean))
+        print("Descricao: {}".format(descricao))
         print("###########################################################################")'''
 
         items['titulo'] = titulo[0] if len(titulo) != 0 else ""
         items['ean'] = ean[0]
         #items['ean'] = ean if ean is not None else ""
-        items['url'] = url
+        items['url'] = url_meta
         items['descricao'] = descricao[0] if len(descricao) != 0 else ""
         
         yield items
