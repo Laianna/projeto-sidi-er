@@ -12,3 +12,4 @@ class AmericanasItem(scrapy.Item):
     ean = scrapy.Field()
     url = scrapy.Field()
     descricao = scrapy.Field()
+    preco = scrapy.Field()
