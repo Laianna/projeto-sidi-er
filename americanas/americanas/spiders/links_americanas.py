@@ -33,7 +33,7 @@ class ProductAmazonSpider(scrapy.Spider):
         print(urls)
 
         return [scrapy.Request(client.scrapyGet(url = url), callback = self.parse,  meta={'url': url}) for url in urls]
-        #return [scrapy.Request(url = url, callback = self.parse, meta = {'url': url}) for url in urls]
+        # return [scrapy.Request(url = url, callback = self.parse, meta = {'url': url}) for url in urls]
 
 
     def parse(self, response):
