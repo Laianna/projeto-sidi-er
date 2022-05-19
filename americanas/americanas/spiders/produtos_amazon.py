@@ -19,7 +19,7 @@ class ProductAmazonSpider(scrapy.Spider):
 
         self.load_links()
 
-        urls = self.df_links["links"][:20].to_list()
+        urls = self.df_links["links"].to_list()
         #urls = ["https://www.amazon.com.br/Notebook-Samsung-256GB-Windows-Chumbo/dp/B09N41J9K1/"]
         #urls = ["https://www.amazon.com.br/Mouse-Pad-Gaming-Havit-HV-MP830/dp/B0152HPXXE/"]
         
@@ -47,7 +47,7 @@ class ProductAmazonSpider(scrapy.Spider):
         categoria = '/'.join(map(lambda x: x.strip(), categoria)).strip()
 
         
-        print("###########################################################################")
+        '''print("###########################################################################")
         print("URL: {}".format(url))
         print("Meta URL: {}".format(url_meta))
         print("Titulo: {}".format(titulo))
@@ -55,7 +55,7 @@ class ProductAmazonSpider(scrapy.Spider):
         print("Descricao: {}".format(descricao))
         print("Preco: {}".format(preco))
         print("Categoria: {}".format(categoria))
-        print("###########################################################################")
+        print("###########################################################################")'''
         
 
         items['titulo'] = titulo[0].strip() if len(titulo) != 0 else ""
