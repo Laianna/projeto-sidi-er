@@ -13,3 +13,4 @@ class AmericanasItem(scrapy.Item):
     url = scrapy.Field()
     descricao = scrapy.Field()
     preco = scrapy.Field()
+    categoria = scrapy.Field()
