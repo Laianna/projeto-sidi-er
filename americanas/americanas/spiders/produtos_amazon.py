@@ -4,11 +4,12 @@ import pandas as pd
 from americanas.items import AmericanasItem
 import re
 from scraper_api import ScraperAPIClient
-client = ScraperAPIClient('15158d4674ce528e593a775a4b90dcc9')
+# client = ScraperAPIClient('15158d4674ce528e593a775a4b90dcc9')#Morreu 20/05 Maio
+client = ScraperAPIClient('39e2ae4a508557b0b178342d1664d3fd') ##--> Mari 2
 
 class ProductAmazonSpider(scrapy.Spider):
 
-    name = 'article'
+    name = 'product_amazon'
     df_links  = None
     
     def load_links(self):
