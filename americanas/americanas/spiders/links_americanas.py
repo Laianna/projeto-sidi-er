@@ -19,9 +19,10 @@ class LinksAmericanasSpider(scrapy.Spider):
         # self.load_links()
         lista_links  = []
         
-        for paginacao in range(1, 84):
+        for paginacao in range(0, 84):
             
-            url = f"https://www.americanas.com.br/categoria/informatica/notebooks?viewMode=list&limit=24&offset={paginacao*24}"
+            url = f"https://www.americanas.com.br/categoria/eletrodomesticos/geladeira-refrigerador/g/tipo-de-produto-Freezer/tipo-de-produto-Frigobar/tipo-de-produto-Geladeira/tipo-de-produto-Refrigerador?chave=prf_hi_dm2_at_1_00_gel&viewMode=list&limit=24&offset={paginacao*24}"
+            # url = f"https://www.americanas.com.br/categoria/informatica/notebooks?viewMode=list&limit=24&offset={paginacao*24}"
             #url = f"https://www.americanas.com.br/categoria/celulares-e-smartphones/smartphone?viewMode=list&limit=24&offset={paginacao*24}"
 
             lista_links.append(url)
@@ -35,12 +36,12 @@ class LinksAmericanasSpider(scrapy.Spider):
         print("URL: {}".format(response.meta.get('url')))
         items = LinksItem()
         
-        for i in range(1, 25):
-            #print(f"{i}")
-            for registro in response.selector.xpath(f'//*[@id="rsyswpsdk"]/div/main/div/div[3]/div[2]/div[{i}]/div/a/@href'): 
-                #print(registro.extract()) #.get()
+        for registro in response.selector.xpath(f'//div[@class="src__Wrapper-sc-1wgxjb2-0 dUUAKQ"]/a/@href'): 
+            print(registro.extract()) #.get()
                 
-                items['links'] = registro.extract() if registro.extract() is not None else ""
-                yield items
+            items['links'] = registro.extract() if registro.extract() is not None else ""
+            yield items
+                
+    
         
 
