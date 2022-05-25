@@ -21,7 +21,9 @@ class LinksAmericanasSpider(scrapy.Spider):
         
         for paginacao in range(0, 84):
             
-            url = f"https://www.americanas.com.br/categoria/eletrodomesticos/geladeira-refrigerador/g/tipo-de-produto-Freezer/tipo-de-produto-Frigobar/tipo-de-produto-Geladeira/tipo-de-produto-Refrigerador?chave=prf_hi_dm2_at_1_00_gel&viewMode=list&limit=24&offset={paginacao*24}"
+            
+            url = f"https://www.americanas.com.br/categoria/eletrodomesticos/fogao/g/tipo-de-produto-Cooktop/tipo-de-produto-Fogareiro/tipo-de-produto-Fog%C3%A3o/tipo-de-produto-Fog%C3%A3o%20Piso/tipo-de-produto-Forno?chave=prf_hi_dm2_at_1_00_fog&viewMode=list&limit=24&offset={paginacao*24}"
+            # url = f"https://www.americanas.com.br/categoria/eletrodomesticos/geladeira-refrigerador/g/tipo-de-produto-Freezer/tipo-de-produto-Frigobar/tipo-de-produto-Geladeira/tipo-de-produto-Refrigerador?chave=prf_hi_dm2_at_1_00_gel&viewMode=list&limit=24&offset={paginacao*24}"
             # url = f"https://www.americanas.com.br/categoria/informatica/notebooks?viewMode=list&limit=24&offset={paginacao*24}"
             #url = f"https://www.americanas.com.br/categoria/celulares-e-smartphones/smartphone?viewMode=list&limit=24&offset={paginacao*24}"
 
