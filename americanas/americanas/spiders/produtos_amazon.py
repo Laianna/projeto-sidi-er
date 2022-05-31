@@ -7,7 +7,9 @@ from scraper_api import ScraperAPIClient
 # client = ScraperAPIClient('15158d4674ce528e593a775a4b90dcc9')#Morreu 20/05 Maio
 #client = ScraperAPIClient('39e2ae4a508557b0b178342d1664d3fd') ##--> Mari 2
 #client = ScraperAPIClient('9bca7afdeca0ed0fbcde13130288e46c') ##--> Mari 3
-client = ScraperAPIClient('1f24a49c4c9e3c0821691a5cbba13f51') #--> conta: lai
+#client = ScraperAPIClient('1f24a49c4c9e3c0821691a5cbba13f51') #--> conta: lai
+client = ScraperAPIClient('4ee9c4689f503403d26167ad815beca3') #--> conta: Lucas
+
 
 class ProductAmazonSpider(scrapy.Spider):
 
@@ -15,7 +17,7 @@ class ProductAmazonSpider(scrapy.Spider):
     df_links  = None
     
     def load_links(self):
-        self.df_links = pd.read_csv('../../../Dados/Links/amazon_links_tvs.csv')
+        self.df_links = pd.read_csv('../../../Dados/Links/amazon_links_geladeiras.csv')
 
 
     def start_requests(self):
