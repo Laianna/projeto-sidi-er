@@ -5,7 +5,8 @@ from americanas.items import AmericanasItem
 import re
 from scraper_api import ScraperAPIClient
 # client = ScraperAPIClient('15158d4674ce528e593a775a4b90dcc9')#Morreu 20/05 Maio
-client = ScraperAPIClient('39e2ae4a508557b0b178342d1664d3fd') ##--> Mari 2
+#client = ScraperAPIClient('39e2ae4a508557b0b178342d1664d3fd') ##--> Mari 2
+client = ScraperAPIClient('9bca7afdeca0ed0fbcde13130288e46c') ##--> Mari 3
 
 class ProductAmazonSpider(scrapy.Spider):
 
@@ -13,7 +14,7 @@ class ProductAmazonSpider(scrapy.Spider):
     df_links  = None
     
     def load_links(self):
-        self.df_links = pd.read_csv('../../../Dados/amazon_links_notebooks.csv')
+        self.df_links = pd.read_csv('../../../Dados/amazon_links_fogao.csv')
 
 
     def start_requests(self):
