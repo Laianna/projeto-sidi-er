@@ -9,6 +9,7 @@ from scraper_api import ScraperAPIClient
 # client = ScraperAPIClient('15158d4674ce528e593a775a4b90dcc9') #--> primeiro -> conta: Mari
 #client = ScraperAPIClient('39e2ae4a508557b0b178342d1664d3fd')
 client = ScraperAPIClient('1f24a49c4c9e3c0821691a5cbba13f51') #--> conta: lai
+#client = ScraperAPIClient('4ee9c4689f503403d26167ad815beca3') #Lucas 
 
 class LinksAmericanasSpider(scrapy.Spider):
 
@@ -43,7 +44,7 @@ class LinksAmericanasSpider(scrapy.Spider):
         for registro in response.selector.xpath(f'//div[@class="src__Wrapper-sc-1wgxjb2-0 dUUAKQ"]/a/@href'): 
             print(registro.extract()) #.get()
                 
-            items['links'] = registro.extract() if registro.extract() is not None else ""
+            items['links'] = f"https://www.americanas.com.br{registro.extract()}" if registro.extract() is not None else ""
             yield items
                 
     
