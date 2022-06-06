@@ -1,0 +1,21 @@
+info,precision,recall,f1-score,support,modelo
+0,0.9,1.0,0.9473684210526316,18.0,hn_balanceado
+1,0.0,0.0,0.0,2.0,hn_balanceado
+accuracy,0.9,0.9,0.9,0.9,hn_balanceado
+macro avg,0.45,0.5,0.4736842105263158,20.0,hn_balanceado
+weighted avg,0.8099999999999999,0.9,0.8526315789473685,20.0,hn_balanceado
+0,0.7894736842105263,0.9375,0.8571428571428572,16.0,hn_desbalanceado
+1,0.0,0.0,0.0,4.0,hn_desbalanceado
+accuracy,0.75,0.75,0.75,0.75,hn_desbalanceado
+macro avg,0.3947368421052631,0.46875,0.4285714285714286,20.0,hn_desbalanceado
+weighted avg,0.631578947368421,0.75,0.6857142857142857,20.0,hn_desbalanceado
+0,1.0,0.8888888888888888,0.9411764705882352,18.0,sn_balanceado
+1,0.5,1.0,0.6666666666666666,2.0,sn_balanceado
+accuracy,0.9,0.9,0.9,0.9,sn_balanceado
+macro avg,0.75,0.9444444444444444,0.803921568627451,20.0,sn_balanceado
+weighted avg,0.95,0.9,0.9137254901960784,20.0,sn_balanceado
+0,1.0,0.9375,0.967741935483871,16.0,sn_desbalanceado
+1,0.8,1.0,0.888888888888889,4.0,sn_desbalanceado
+accuracy,0.95,0.95,0.95,0.95,sn_desbalanceado
+macro avg,0.9,0.96875,0.92831541218638,20.0,sn_desbalanceado
+weighted avg,0.96,0.95,0.9519713261648748,20.0,sn_desbalanceado
