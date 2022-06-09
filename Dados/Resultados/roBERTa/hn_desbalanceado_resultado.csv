@@ -1,0 +1,6 @@
+,precision,recall,f1-score,support,modelo,dataset,tempo
+0,0.8,1.0,0.888888888888889,4.0,roBERTa,hn_desbalanceado,43.67021322250366
+1,0.0,0.0,0.0,1.0,roBERTa,hn_desbalanceado,43.67021322250366
+accuracy,0.8,0.8,0.8,0.8,roBERTa,hn_desbalanceado,43.67021322250366
+macro avg,0.4,0.5,0.4444444444444445,5.0,roBERTa,hn_desbalanceado,43.67021322250366
+weighted avg,0.64,0.8,0.7111111111111111,5.0,roBERTa,hn_desbalanceado,43.67021322250366

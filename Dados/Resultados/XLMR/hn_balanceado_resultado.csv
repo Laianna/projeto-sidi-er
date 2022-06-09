@@ -1,0 +1,6 @@
+,precision,recall,f1-score,support,modelo,dataset,tempo
+0,0.0,0.0,0.0,5.0,XLMR,hn_balanceado,53.995702266693115
+1,0.0,0.0,0.0,0.0,XLMR,hn_balanceado,53.995702266693115
+accuracy,0.0,0.0,0.0,0.0,XLMR,hn_balanceado,53.995702266693115
+macro avg,0.0,0.0,0.0,5.0,XLMR,hn_balanceado,53.995702266693115
+weighted avg,0.0,0.0,0.0,5.0,XLMR,hn_balanceado,53.995702266693115
