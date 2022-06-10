@@ -42,6 +42,9 @@ def vectorize_dataframe(dataframe):
                                 ) 
 
     vector = vectorizer.fit_transform(lista_titulos).toarray()    
+    # print("Vocab")
+    # print(vectorizer.vocabulary_)
+
     return vector
 
 
@@ -59,6 +62,8 @@ def get_cooccurrence_bow(dataframe):
         lista_coo = np.multiply(np.logical_and(vec_titulo_1, vec_titulo_2), 1).tolist()
         lista_features.append(lista_coo)
 
+    # print("Lista features")
+    # print(lista_features)
     return lista_features
 
 
