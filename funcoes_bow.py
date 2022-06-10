@@ -98,8 +98,8 @@ def pipeline_rf(name_dataset, X_train, y_train, X_valid, y_valid, X_test, y_test
 
     #Get BoW of the sentences
     X_train_vec, X_valid_vec, X_test_vec = get_all_bows(X_train, X_valid, X_test)
-    print("vou printar X")
-    print(X_train_vec)
+    # print("vou printar X")
+    # print(X_train_vec)
     # #Get best parameters
     # best_params = get_best_parameters(X_train_vec, X_valid_vec, y_train, y_valid)
     
@@ -111,3 +111,5 @@ def pipeline_rf(name_dataset, X_train, y_train, X_valid, y_valid, X_test, y_test
     # label_pred = forest.predict(X_test_vec)
 
     #return (name_dataset, y_test, label_pred)
+    
+    return X_train_vec, X_valid_vec, X_test_vec
