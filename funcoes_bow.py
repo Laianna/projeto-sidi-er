@@ -42,8 +42,6 @@ def vectorize_dataframe(dataframe):
                                 ) 
 
     vector = vectorizer.fit_transform(lista_titulos).toarray()    
-    # print("Vocab")
-    # print(vectorizer.vocabulary_)
 
     return vector
 
@@ -60,10 +58,9 @@ def get_cooccurrence_bow(dataframe):
         vec_titulo_2 = vector[indice + 1]
         
         lista_coo = np.multiply(np.logical_and(vec_titulo_1, vec_titulo_2), 1).tolist()
+        
         lista_features.append(lista_coo)
 
-    # print("Lista features")
-    # print(lista_features)
     return lista_features
 
 
@@ -103,18 +100,17 @@ def pipeline_rf(name_dataset, X_train, y_train, X_valid, y_valid, X_test, y_test
 
     #Get BoW of the sentences
     X_train_vec, X_valid_vec, X_test_vec = get_all_bows(X_train, X_valid, X_test)
-    # print("vou printar X")
-    # print(X_train_vec)
+
     # #Get best parameters
-    # best_params = get_best_parameters(X_train_vec, X_valid_vec, y_train, y_valid)
+    best_params = get_best_parameters(X_train_vec, X_valid_vec, y_train, y_valid)
     
-    # #Train model with best parameters
-    # forest = RandomForestClassifier(**best_params) 
-    # forest = forest.fit(X_train_vec, y_train)
+    #Train model with best parameters
+    forest = RandomForestClassifier(**best_params) 
+    forest = forest.fit(X_train_vec, y_train)
 
-    # #Predict test dataset 
-    # label_pred = forest.predict(X_test_vec)
+    #Predict test dataset 
+    label_pred = forest.predict(X_test_vec)
 
-    #return (name_dataset, y_test, label_pred)
+    return (name_dataset, y_test, label_pred)
     
-    return X_train_vec, X_valid_vec, X_test_vec
+    # return X_train_vec, X_valid_vec, X_test_vec
