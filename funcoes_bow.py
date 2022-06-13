@@ -31,14 +31,14 @@ def get_list_dataframe(dataframe):
 
 
 #Cria bow binário das sentenças
-def vectorize_dataframe(dataframe):
+def vectorize_dataframe(dataframe, binario = True):
     lista_titulos = get_list_dataframe(dataframe)
 
     vectorizer = CountVectorizer(analyzer = "word",
                                 tokenizer = None,
                                 lowercase = True,
                                 strip_accents = 'unicode',
-                                binary = True
+                                binary = binario
                                 ) 
 
     vector = vectorizer.fit_transform(lista_titulos).toarray()
