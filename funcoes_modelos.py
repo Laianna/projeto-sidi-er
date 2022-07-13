@@ -131,4 +131,4 @@ def pipeline_bert(name_model, name_dataset, X_train, y_train, X_valid, y_valid, 
     #Predict test data
     label_pred = get_test_prediction(model, ds_test)
 
-    return (name_dataset, bert_history, y_test, label_pred)
+    return (name_dataset, bert_history, y_test, label_pred, model)
