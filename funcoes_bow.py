@@ -95,7 +95,7 @@ def get_all_bows(X_train, X_valid, X_test):
 def get_best_parameters(X_train_vec, X_valid_vec, y_train, y_valid):
     study = optuna.create_study(direction="maximize")
     obj_parcial = partial(objective, X_train_vec, X_valid_vec, y_train, y_valid)
-    study.optimize(obj_parcial, n_trials=1)
+    study.optimize(obj_parcial, n_trials=20)
 
     return study.best_params
 

@@ -113,7 +113,7 @@ def pipeline_bert(name_model, name_dataset, X_train, y_train, X_valid, y_valid, 
     tokenizer = AutoTokenizer.from_pretrained(MODELOS[name_model], do_lower_case = False)
 
     learning_rate = 2e-5
-    number_of_epochs = 1
+    number_of_epochs = 3
     ds_train, ds_valid, ds_test = get_bert_data(name_model, tokenizer, X_train, y_train, X_valid, y_valid, X_test, y_test)
     
     # model initialization
