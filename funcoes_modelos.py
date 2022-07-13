@@ -11,7 +11,7 @@ from transformers import AutoTokenizer
 test = None
 # can be up to 512 for BERT
 MAX_LENGTH = 256
-BATCH_SIZE = 64
+BATCH_SIZE = 1
 
 MODELOS = {"BERT": "neuralmind/bert-base-portuguese-cased",
            "roBERTa": "rdenadai/BR_BERTo",
