@@ -136,6 +136,6 @@ def pipeline_rf(name_dataset, X_train, y_train, X_valid, y_valid, X_test, y_test
     #Predict test dataset 
     label_pred = forest.predict(X_test_vec)
 
-    return (name_dataset, y_test, label_pred)
+    return (name_dataset, y_test, label_pred, forest)
     
     # return X_train_vec, X_valid_vec, X_test_vec
