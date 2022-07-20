@@ -13,7 +13,6 @@ test = None
 MAX_LENGTH = 256
 BATCH_SIZE = 1
 
-tf.keras.backend.set_floatx('float16')
 
 MODELOS = {"BERT": "neuralmind/bert-base-portuguese-cased",
            "roBERTa": "rdenadai/BR_BERTo",
